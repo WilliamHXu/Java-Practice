@@ -1,5 +1,6 @@
 package com.zipcoder.quiz5;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MissingCharacter {
@@ -11,7 +12,17 @@ public class MissingCharacter {
      * @param text
      * @return a list of all the missing characters from the text
      */
+
+
     public List<Character> getMissingChars(String text) {
-        return null;
+        List<Character> all = new ArrayList<>();
+        char now = 'a';
+        while (now <= 'z') {
+            all.add(now++);
+        }
+        for (Character c : text.toCharArray()) {
+            all.remove(c);
+        }
+        return all;
     }
 }
